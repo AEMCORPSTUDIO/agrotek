@@ -12,6 +12,8 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="css/turbo.css">
+  <link rel="stylesheet" type="text/css" href="build/styles.css">
 	<link rel="stylesheet" type="text/css" media="all and (min-width: 768px)" href="css/animate.min.css">
 	<!-- Fonts -->
 	<link rel="stylesheet" type="text/css" href="fonts/opensans/opensans.css">
@@ -64,120 +66,132 @@
 			<div class="col-lg-2">&nbsp;</div>
 		</div>
 	</div>
-	<div class="container top_str padding_str  turbo">
+	<div class="container top_str padding_str turbo">
     <div class="turbo-animation">
-      <div class="pulsating-circle"></div>
-      <div class="bg"></div>
-      <div class="content">
-      		<div class="circle no1">
-      			<span class="dot"></span>
-      			<span class="dot deg90"></span>
-      		</div>
-      		<div class="circle no2">
-      			<span class="dot"></span>
-      			<span class="dot deg45"></span>
-      			<span class="dot deg90"></span>
-      			<span class="dot deg135"></span>
-      		</div>
-      		<div class="circle no3">
-      			<span class="dot"></span>
-      			<span class="dot deg30"></span>
-      			<span class="dot deg60"></span>
-      			<span class="dot deg90"></span>
-      			<span class="dot deg120"></span>
-      			<span class="dot deg150"></span>
-      		</div>
-      		<div class="circle no4">
-      			<span class="dot"></span>
-      			<span class="dot deg22"></span>
-      			<span class="dot deg45"></span>
-      			<span class="dot deg67"></span>
-      			<span class="dot deg90"></span>
-      			<span class="dot deg112"></span>
-      			<span class="dot deg135"></span>
-      			<span class="dot deg157"></span>
-      		</div>
-      		<div class="circle no5">
-      			<span class="dot"></span>
-      			<span class="dot deg18"></span>
-      			<span class="dot deg36"></span>
-      			<span class="dot deg54"></span>
-      			<span class="dot deg72"></span>
-      			<span class="dot deg90"></span>
-      			<span class="dot deg108"></span>
-      			<span class="dot deg126"></span>
-      			<span class="dot deg144"></span>
-      			<span class="dot deg162"></span>
-      		</div>
-      		<div class="circle no6">
-      			<span class="dot"></span>
-      			<span class="dot deg15"></span>
-      			<span class="dot deg30"></span>
-      			<span class="dot deg45"></span>
-      			<span class="dot deg60"></span>
-      			<span class="dot deg75"></span>
-      			<span class="dot deg90"></span>
-      			<span class="dot deg105"></span>
-      			<span class="dot deg120"></span>
-      			<span class="dot deg135"></span>
-      			<span class="dot deg150"></span>
-      			<span class="dot deg165"></span>
-      		</div>
-      		<div class="circle no7">
-      			<span class="dot"></span>
-      			<span class="dot deg12"></span>
-      			<span class="dot deg25"></span>
-      			<span class="dot deg38"></span>
-      			<span class="dot deg51"></span>
-      			<span class="dot deg64"></span>
-      			<span class="dot deg77"></span>
-      			<span class="dot deg90"></span>
-      			<span class="dot deg102"></span>
-      			<span class="dot deg115"></span>
-      			<span class="dot deg128"></span>
-      			<span class="dot deg141"></span>
-      			<span class="dot deg154"></span>
-      			<span class="dot deg167"></span>
-      		</div>
-      		<div class="circle no8">
-      			<span class="dot"></span>
-      			<span class="dot deg11"></span>
-      			<span class="dot deg22"></span>
-      			<span class="dot deg33"></span>
-      			<span class="dot deg45"></span>
-      			<span class="dot deg56"></span>
-      			<span class="dot deg67"></span>
-      			<span class="dot deg78"></span>
-      			<span class="dot deg90"></span>
-      			<span class="dot deg101"></span>
-      			<span class="dot deg112"></span>
-      			<span class="dot deg123"></span>
-      			<span class="dot deg135"></span>
-      			<span class="dot deg146"></span>
-      			<span class="dot deg157"></span>
-      			<span class="dot deg168"></span>
-      		</div>
-      		<div class="circle no9">
-      			<span class="dot"></span>
-      			<span class="dot deg10"></span>
-      			<span class="dot deg20"></span>
-      			<span class="dot deg30"></span>
-      			<span class="dot deg40"></span>
-      			<span class="dot deg50"></span>
-      			<span class="dot deg60"></span>
-      			<span class="dot deg70"></span>
-      			<span class="dot deg80"></span>
-      			<span class="dot deg90"></span>
-      			<span class="dot deg100"></span>
-      			<span class="dot deg110"></span>
-      			<span class="dot deg120"></span>
-      			<span class="dot deg130"></span>
-      			<span class="dot deg140"></span>
-      			<span class="dot deg150"></span>
-      			<span class="dot deg160"></span>
-      			<span class="dot deg170"></span>
-      		</div>
-      		<div class="circle no10"></div>
+
+      <div class='svg-scene circle scene-leaf loader' id='leaf'>
+        <svg class='svg svg-leaf' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path fill="#EDEEF0" d="M169.066 16.168v159.234L80.14 413.235c-8.395 22.452-5.25 47.616 8.413 67.31C102.217 500.243 124.685 512 148.656 512h214.688c23.984 0 46.458-11.768 60.12-31.48 13.66-19.713 16.79-44.888 8.372-67.345L342.69 175.397V16.167H169.065z"/>
+          <path fill="#DCDEE2" d="M431.836 413.174L342.69 175.396V16.168h-86.523V512h107.176c23.984 0 46.458-11.768 60.12-31.48 13.662-19.713 16.792-44.89 8.373-67.346z"/>
+          <path fill="#9ED04D" d="M351.634 291.368H160.23l-49.8 133.192c-4.755 12.713-3.044 26.4 4.693 37.554s19.958 17.55 33.532 17.55h214.688c13.58 0 25.806-6.402 33.542-17.565 7.737-11.163 9.44-24.86 4.67-37.575l-49.92-133.157z"/>
+          <path fill="#86B143" d="M401.557 424.526l-49.923-133.158h-95.467v188.295h107.176c13.58 0 25.806-6.4 33.542-17.564 7.737-11.163 9.44-24.858 4.672-37.574z"/>
+          <path fill="#D8D9DD" d="M169.65 43.72h173.045v35.137H169.65z"/>
+          <path fill="#B7B9C0" d="M256.167 43.72h86.517v35.137h-86.517z"/>
+          <path fill="#EDEEF0" d="M342.345 53.895H169.408c-14.883 0-26.948-12.064-26.948-26.948C142.462 12.064 154.526 0 169.408 0h172.937c14.883 0 26.948 12.064 26.948 26.948 0 14.882-12.064 26.947-26.948 26.947z"/>
+          <path fill="#DCDEE2" d="M369.293 26.948C369.293 12.064 357.23 0 342.345 0h-86.178v53.895h86.178c14.884 0 26.948-12.065 26.948-26.947z"/>
+          <g fill="#FFF">
+            <circle cx="223.688" cy="355.706" r="26.489"/>
+            <circle cx="176.684" cy="434.354" r="18.731"/>
+            <circle cx="331.331" cy="404.246" r="18.731"/>
+          </g>
+          <circle cx="331.331" cy="404.246" r="18.731" fill="#EDEEF0"/>
+        </svg>
+      </div>
+
+      <div class='svg-scene scene-circle scene-first loader' id='sphere-1'>
+	      <div class='scene-text'>
+	        <span>Ценности</span>
+	      </div>
+        <svg class='svg svg-circle loader-inner' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 505 505">
+          <circle class='circle-first loader-inner-path' cx="252.5" cy="252.5" r="252.5" fill="#FFD05B" />
+          <path fill="#FFF" d="M339.3 402.9H165.7L78.8 252.5l86.8-150.4h173.7l86.9 150.4-86.9 150.4zm-166.8-11.8h160l80-138.6-80-138.6h-160l-80 138.6 80 138.6z"/>
+          <path fill="#FFF" d="M85.7 246.6h333.6v11.8H85.7z"/>
+          <path fill="#FFF" d="M163.49 389.23l177.814-282.25 9.984 6.29-177.814 282.25z"/>
+          <path  fill="#FFF" d="M177.12 401.394l-10.332-5.7L327.914 103.6l10.332 5.7z"/>
+          <circle class='circle' cx="334.7" cy="109.5" r="33.9" fill="#324A5E"/>
+          <g fill="#54C0EB">
+            <circlec lass='circle' cx="170.5" cy="109.5" r="33.9"/>
+            <circle class='circle' cx="334.7" cy="393.7" r="33.9"/>
+          </g>
+          <circle class='circle' cx="170.5" cy="393.7" r="33.9" fill="#324A5E"/>
+          <circle class='circle' cx="419.3" cy="252.5" r="33.9" fill="#FF7058"/>
+          <circle class='circle' cx="252.5" cy="252.5" r="33.9" fill="#ACB3BA"/>
+          <circle class='circle' cx="85.7" cy="252.5" r="33.9" fill="#FF7058"/>
+        </svg>
+      </div>
+
+			<div class='svg-scene scene-circle sphere-2 loader' id='sphere-2'>
+	      <div class='scene-text'>
+	        <span>Видение</span>
+	      </div>
+				<svg class='svg svg-circle loader-inner' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <circle class='circle-first loader-inner-path' id='circle-2' cx="252.5" cy="252.5" r="252.5" fill="#FFD05B" />
+					<circle cx="256" cy="256" r="256" fill="#FFEDB5"/>
+					<path fill="#FEE187" d="M384.743 477.305c53.35-31.103 94.43-80.94 114.228-140.498L376.716 214.55 210.89 300.983l28.182 28.18-1.445 1.027 147.116 147.115z"/>
+					<path fill="#FFC61B" d="M19.082 353.113C57.337 446.336 148.992 512 256 512s198.663-65.664 236.918-158.887H19.082z"/>
+					<path fill="#FF7F4F" d="M290.282 300.984l86.434-86.434-157.66-157.66-126.13 126.128L210.89 300.984"/>
+					<g fill="#D35933">
+						<path d="M156.648 119.296l-63.72 63.722L210.89 300.984h79.39l24.027-24.028"/>
+						<path d="M290.282 300.984l86.434-86.434-15.766-15.766-102.2 102.2M92.926 183.003L219.053 56.877l15.766 15.766L108.692 198.77z"/>
+					</g>
+					<g fill="#B54324">
+						<path d="M298.543 261.19l-39.793 39.794h31.532l24.027-24.028M172.41 135.07l-63.716 63.716-15.766-15.766 63.715-63.716z"/>
+					</g>
+					<g fill="#477F3C">
+						<path d="M253.535 229.347c-.012 14.233-18.387 32.787-18.387 32.787s-18.344-18.58-18.334-32.813c.012-14.232 8.235-18.736 18.375-18.73 10.14.007 18.357 4.524 18.345 18.757z"/>
+						<path d="M249.042 212.187c16.986-.014 39.128-21.942 39.128-21.942s-22.173-21.892-39.16-21.878c-16.985.014-22.36 9.828-22.35 21.928.008 12.1 5.395 21.906 22.382 21.892z"/>
+					</g>
+					<g fill="#FFF">
+						<circle cx="211.989" cy="208.696" r="21.413"/>
+						<circle cx="244.174" cy="176.528" r="21.413"/>
+					</g>
+					<circle cx="211.989" cy="176.528" r="21.413" fill="#FFEDB5"/>
+					<path fill="#FEE187" d="M197.842 160.49c-.333.292-.67.575-.99.894-8.363 8.363-8.363 21.92 0 30.28s21.92 8.363 30.282 0c.317-.317.6-.657.895-.99L197.84 160.49z"/>
+					<circle cx="244.174" cy="208.696" r="21.413" fill="#FFEDB5"/>
+					<path fill="#FEE187" d="M230.016 192.664c-.333.293-.67.576-.99.895-8.363 8.362-8.363 21.918 0 30.28 8.363 8.364 21.92 8.364 30.282 0 .317-.318.6-.656.895-.99l-30.187-30.186z"/>
+					<circle cx="228.073" cy="192.612" r="14.72" fill="#FFC61B"/>
+					<path fill="#EAA22F" d="M218.66 181.307c-.338.283-.672.576-.99.895-5.75 5.75-5.75 15.07 0 20.818s15.07 5.75 20.818 0c.317-.317.612-.65.895-.99l-20.723-20.723z"/>
+					<g fill="#D35933">
+						<circle cx="241.778" cy="327.111" r="5.172"/>
+						<circle cx="261.172" cy="364.606" r="5.172"/>
+						<circle cx="222.384" cy="403.394" r="5.172"/>
+						<circle cx="279.273" cy="403.394" r="5.172"/>
+						<circle cx="261.172" cy="318.061" r="5.172"/>
+					</g>
+				</svg>
+      </div>
+
+      <div class='svg-scene scene-circle sphere-3 loader' id='sphere-3'>
+	      <div class='scene-text'>
+	        <span>История</span>
+	      </div>
+        <svg  class='svg svg-circle loader-inner' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 58">
+          <circle cx="29" cy="29" r="29" fill="#4B6DAA"/>
+          <path fill="#424A60" d="M33 44c-.206 0-.413-.063-.59-.193l-15-11c-.446-.327-.543-.953-.216-1.398.327-.444.952-.543 1.398-.216l15 11c.445.327.542.953.215 1.398-.197.266-.5.408-.808.408zM18 25c-.307 0-.61-.142-.807-.408-.326-.445-.23-1.07.215-1.398l15-11c.446-.327 1.07-.23 1.398.215.326.444.23 1.07-.215 1.397l-15 11c-.177.13-.384.193-.59.193z"/>
+          <circle cx="15" cy="28" r="5" fill="#A4E869"/>
+          <circle cx="38" cy="13" r="5" fill="#FFF"/>
+          <circle cx="38" cy="43" r="5" fill="#FFF"/>
+        </svg>
+      </div>
+
+      <div class='svg-scene scene-circle sphere-4 loader' id='sphere-4'>
+	      <div class='scene-text'>
+	        <span>Миссия</span>
+	      </div>
+        <svg  class='svg svg-circle loader-inner' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 508 508">
+          <circle cx="254" cy="254" r="254" fill="#84DBFF"/>
+          <g fill="#324A5E">
+            <path d="M359.2 274.4l-120.4 67.2c-2.8 1.6-4 5.2-2.4 8 1.2 2 3.2 3.2 5.2 3.2.8 0 2-.4 2.8-.8l120.4-67.2c2.8-1.6 4-5.2 2.4-8s-5.2-4-8-2.4zM130.4 251.6c-2.4-2.4-6-2.4-8.4 0s-2.4 6 0 8.4l82.8 82c1.2 1.2 2.8 1.6 4 1.6 1.6 0 3.2-.4 4.4-1.6 2.4-2.4 2.4-6 0-8.4l-82.8-82z"/>
+            <path d="M369.6 255.2l-116-69.2c-.4-.4-1.2-.4-1.6-.8l94.4-63.2c2.8-2 3.6-5.6 1.6-8.4s-5.6-3.6-8.4-1.6l-98.8 66.4c-2.8 2-3.6 5.6-1.6 8.4 1.2 1.6 3.2 2.8 4.8 2.8h.8c-.4.8-.4 1.6-.4 2.4-.8-1.6-2.8-2.8-4.8-2.8-3.2 0-6 2.4-6.4 5.6l-10.4 161.6c-.4 3.2 2.4 6 5.6 6.4h.4c3.2 0 5.6-2.4 6-5.6l10.4-161.6v-.8c.4.8 1.2 1.6 2 2l116 69.6c.8.4 2 .8 3.2.8 2 0 4-1.2 5.2-2.8 2-3.6 1.2-7.2-2-9.2z"/>
+          </g>
+          <g fill="#FFF">
+            <circle cx="244" cy="183.6" r="42.4"/>
+            <circle cx="231.6" cy="356.4" r="64.4"/>
+          </g>
+          <circle cx="231.6" cy="356.4" r="48" fill="#FF7058"/>
+          <g fill="#FFF">
+            <circle cx="342.8" cy="116.8" r="29.2"/>
+            <circle cx="372.4" cy="264.8" r="47.6"/>
+            <circle cx="122" cy="251.2" r="34.4"/>
+          </g>
+          <circle cx="372.4" cy="264.8" r="34.4" fill="#FFD05B"/>
+          <circle cx="342.8" cy="116.8" r="18.4" fill="#E6E9EE"/>
+          <circle cx="122" cy="251.2" r="22" fill="#F1543F"/>
+          <circle cx="244" cy="183.6" r="29.2" fill="#54C0EB"/>
+        </svg>
+      </div>
+
+
       </div>
     </div>
 		<div class="row">
@@ -248,11 +262,14 @@
 
 			<!-- Подключаем jQuery библиотеку -->
 			<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/1.1.3/anime.min.js"></script>
 
 			<!-- Bootstrap's JavaScript plugins) -->
 			<script src="js/bootstrap.min.js"></script>
 
 			<!-- Анимация меню -->
 			<script src="js/animate-pulse.js"></script>
+
+			<script src="js/turbo.js"></script>
 </body>
 </html>
