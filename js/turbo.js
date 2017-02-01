@@ -41,7 +41,7 @@ $(() => {
 
   setTimeout(() => {
     anime({
-      targets: '.scene-box path,.scene-box ellipse,.scene-box circle',
+      targets: '.scene-box path, .scene-box circle, .scene-box ellipse',
       opacity: [0, 1],
       fillOpacity: [0, 1],
       translateY: [-180, 0],
@@ -78,7 +78,28 @@ $(() => {
       fillOpacity: [0, 1],
       translateY: [-180, 0],
       duration: 600,
-      delay: (e, i) => i * 30
+      delay: (e, i) => i * 30,
+      complete: (e) => {
+        anime({
+          targets: '.windmill',
+          rotate: {
+            value: [35000],
+          },
+          loop: true,
+          elasticity: 700,
+          duration: 2113500,
+          direction: 'alternate'
+        });
+        anime({
+          targets: '.clouds',
+          translateX: [0, 500],
+          loop: true,
+        //  rotate: true,
+          autoplay: true,
+          duration: 35000,
+          direction: 'alternate'
+        });
+      }
     });
   }, 6000);
 
