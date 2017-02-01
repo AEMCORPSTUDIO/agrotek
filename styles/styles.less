@@ -58,6 +58,9 @@ body {
     height:300px;
   }
 
+  path, circle, ellipse {
+    fill-opacity:0;
+  }
 	.svg {
     position:absolute;
     left:0;
@@ -76,6 +79,22 @@ body {
 		top:100px;
 		left:100px;
   }
+  &.scene-leaf-cap {
+    height: 230px;
+    z-index: 9;
+    width: 180px;
+    position: absolute;
+    top: 190px;
+    left: 400px;
+  }
+
+  &.scene-box {
+    height: 200px;
+    width: 190px;
+    position: absolute;
+    top: 190px;
+    left: 730px;
+  }
   &.sphere-2 {
 	  height:240px;
 	  width:240px;
@@ -87,6 +106,7 @@ body {
 
 	}
   &.sphere-3 {
+    z-index:4;
 	  height:190px;
 	  width:190px;
 		position:absolute;

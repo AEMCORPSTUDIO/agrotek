@@ -41,6 +41,11 @@
   width: 300px;
   height: 300px;
 }
+.svg-scene path,
+.svg-scene circle,
+.svg-scene ellipse {
+  fill-opacity: 0;
+}
 .svg-scene .svg {
   position: absolute;
   left: 0;
@@ -59,6 +64,21 @@
   top: 100px;
   left: 100px;
 }
+.svg-scene.scene-leaf-cap {
+  height: 230px;
+  z-index: 9;
+  width: 180px;
+  position: absolute;
+  top: 190px;
+  left: 400px;
+}
+.svg-scene.scene-box {
+  height: 200px;
+  width: 190px;
+  position: absolute;
+  top: 190px;
+  left: 730px;
+}
 .svg-scene.sphere-2 {
   height: 240px;
   width: 240px;
@@ -67,6 +87,7 @@
   left: 530px;
 }
 .svg-scene.sphere-3 {
+  z-index: 4;
   height: 190px;
   width: 190px;
   position: absolute;
