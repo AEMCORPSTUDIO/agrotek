@@ -24,21 +24,183 @@ $(() => {
     });
   }
 
-  setTimeout(() => aniItemsRandom('.scene-leaf circle'), 700);
+//  setTimeout(() => aniItemsRandom('.scene-leaf circle'), 700);
   setTimeout(() => drawSVGPath('.scene-first path', false, true), 10);
   // setTimeout(() => drawSVGPath('.scene-leaf path'), 10);
-  setTimeout(() => aniItemsRandom('.scene-leaf .path'), 800);
-  setTimeout(() => aniItemsRandom('.scene-leaf .path-leaf'), 2400);
+  //
+  setTimeout(() => {
+    setTimeout(() => anime({
+      targets: '.scene-leaf .bottle',
+      opacity: [0, 0.7],
+      scale: [0, 1],
+      rotateX: [anime.random(70, 30), 0],
+      translateX: [anime.random(120, 30), 0],
+      fillOpacity: [0, 0.7],
+      translateY: [anime.random(120, 30), 0],
+      duration: 1100,
+      easing: randEasing(true),
+      delay: (e, i) => i * 130
+    }), 200);
+    setTimeout(() => {
+      anime({
+        targets: '.scene-leaf .liquids',
+        scale: ['1', '1'],
+        opacity: [0, 1],
+        transformOrigin: 'bottom center',
+        fillOpacity: [0, 1],
+        duration: 2400,
+        easing: randEasing(),
+        delay: (e, i) => i * 130
+      });
+    }, 900);
+    setTimeout(() => {
+      anime({
+        targets: '.scene-leaf .stick',
+        scale: ['1,0', '1,1'],
+        opacity: [0, 1],
+        transformOrigin: 'bottom center',
+        fillOpacity: [0, 1],
+        translateY: [200, 0],
+        duration: 2400,
+        easing: randEasing(),
+        delay: (e, i) => i * 130
+      });
+    }, 1200);
+  }, 800);
+
+  setTimeout(() => {
+    aniItemsRandom('.scene-leaf .path-leaf');
+  }, 2400);
 
   const sphere2Circle = $('.sphere-2 circle');
   const sphere2Path = $('.sphere-2 path');
-
+//  easeInOutQuad;
   setTimeout(() => {
-    aniItemsRandom('.sphere-2 path');
-    setTimeout(() => aniItemsRandom('.sphere-2 circle'), 1400);
-    setTimeout(() => showText('.sphere-2'), 2400);
+    setTimeout(() => anime({
+      targets: '.sphere-2 .bottle',
+      opacity: [0, 1],
+      scale: [0, 1],
+      rotateX: [50, 0],
+      translateX: [-240, -240],
+      fillOpacity: [0, 1],
+      translateY: [-80, 0],
+      easing: 'easeOutInCubic',
+      duration: 500,
+      delay: (e, i) => i * 70
+    }), 1200);
+    setTimeout(() => anime({
+      targets: '.sphere-2 .dots',
+      opacity: [0, 1],
+      translateX: [-240, -240],
+      fillOpacity: [0, 0.5],
+      translateY: [-80, 0],
+      easing: randEasing(true),
+      duration: 1200,
+      delay: (e, i) => i * 70,
+      complete: () => {
+
+      }
+    }), 1500);
+
+    setTimeout(() => {
+      anime({
+        targets: '.sphere-2 .flowers, .sphere-2 .bottle',
+        translateX: [-240, 0],
+        delay: (e, i) => i * 10,
+        easing: randEasing(),
+        duration: 100,
+        complete: () => {
+          anime({
+            targets: '.scene-leaf-cap .cap',
+            translateY: [-250, 0],
+            fillOpacity: [0, 0.7],
+            duration: 1000,
+            asing: randEasing(),
+          });
+        }
+      });
+      setTimeout(() => {
+        anime({
+          targets: '.sphere-2 .dots',
+          translateX: [-240, 0],
+          fillOpacity: 0,
+          delay: (e, i) => i * 10,
+          easing: randEasing(),
+        //  fillOpacity: [0.5, 1],
+          duration: 500,
+          complete: () => {
+            anime({
+              targets: '.sphere-2 .dots',
+              fillOpacity: [0, 1],
+              scale: [0, 1],
+              duration: 800,
+              delay: (e, i) => i * 110,
+            });
+          }
+        });
+      }, 50);
+    }, 3000);
+    setTimeout(() => aniItemsRandom('.sphere-2 .background'), 3500);
+    setTimeout(() => {
+      anime({
+        targets: '.scene-leaf-cap .leafs',
+        scale: [0.5, 1],
+        duration: 1500,
+        delay: (e, i) => i * 130,
+        complete: () => {
+        }
+      });
+      anime({
+        targets: '.scene-leaf-cap .plate',
+        translateY: [-50, 0]
+      });
+    }, 2900);
+
+    setTimeout(() => anime({
+      targets: '.sphere-2 .flowers',
+      scale: [0, 1],
+      translateX: [-240, -240],
+      fillOpacity: [0, 1],
+      opacity: [0, 1],
+      duration: 1200,
+      delay: (e, i) => i * 80
+    }), 1200);
+  //  setTimeout(() => aniItemsRandom('.sphere-2 circle'), 1400);
+  //  setTimeout(() => showText('.sphere-2'), 2400);
   }, 2400);
 
+  $('.scene-leaf-cap .leafs').css({ transform: 'scale(0.5)' });
+
+  setTimeout(() => {
+    anime({
+      targets: '.scene-leaf-cap .leaf',
+      opacity: [0, 1],
+      skewY: [-100, 0],
+      skewX: [-30, 0],
+      rotateY: [-30, 0],
+      fillOpacity: [0, 1],
+      translateY: [80, 0],
+      duration: 2900,
+      delay: (e, i) => i * 130,
+      complete: () => {
+
+      }
+    });
+  }, 3200);
+  setTimeout(() => {
+    anime({
+      targets: '.scene-leaf-cap .plate',
+      opacity: [0, 1],
+      rotateY: [-60, 0],
+      fillOpacity: [0, 1],
+      translateY: [180, -50],
+      duration: 900,
+      delay: (e, i) => i * 170,
+      complete: () => {
+
+      }
+    });
+  }, 3800);
   setTimeout(() => {
     anime({
       targets: '.scene-box path, .scene-box circle, .scene-box ellipse',
@@ -54,14 +216,19 @@ $(() => {
     aniItemsRandom('.scene-first circle', () => {
     //  showText('.sphere-first');
     });
+    anime({
+      targets: '.scene-first svg',
+      rotate: '+12260deg',
+      duration: 2232600,
+      loop: true,
+      round: true
+    });
     setTimeout(() => showText('.scene-first'), 1800);
   }, 2000);
 
   setTimeout(() => {
     aniItemsRandom('.sphere-3  circle', () => {
       drawSVGPath('.sphere-3 .circle', false, true);
-
-
       drawSVGPath('.sphere-3  path', () => {
 
       }, true);
@@ -73,7 +240,7 @@ $(() => {
 //    aniItemsRandom('.sphere-4 circle');
     setTimeout(() => showText('.sphere-4'), 100);
     anime({
-      targets: '.sphere-4 path,.sphere-4 ellipse, .sphere-4 circle',
+      targets: '.sphere-4 path, .sphere-4 ellipse, .sphere-4 circle',
       opacity: [0, 1],
       fillOpacity: [0, 1],
       translateY: [-180, 0],
@@ -102,20 +269,6 @@ $(() => {
       }
     });
   }, 6000);
-
-  setTimeout(() => {
-    anime({
-      targets: '.scene-leaf-cap path',
-      opacity: [0, 1],
-      fillOpacity: [0, 1],
-      translateY: [180, 0],
-      duration: 900,
-      delay: (e, i) => i * 130,
-      complete: () => {
-        aniItemsRandom('.scene-leaf-cap ellipse, .scene-leaf-cap circle');
-      }
-    });
-  }, 2700);
 
 
   function wierdMoves(selector, duration, mode) {
@@ -265,45 +418,46 @@ const aniEasings = [
   'easeInSine',
   'easeInBack',
   'easeInBounce',
-  'linear'
+  'linear',
+  'easeInQuad',
+  'easeInQuart',
+  'easeInQuint',
+  'easeInSine',
+  'easeInBack',
+  'easeInBounce',
+  'easeInCirc',
+  'easeInCubic',
+  'easeInElastic',
+  'easeInExpo',
+  'easeInOutBack',
+  'easeInOutBounce',
+  'easeOutBack',
+  'easeOutBounce',
+  'easeOutCirc',
+  'easeOutCubic',
+  'easeOutElastic',
+  'easeOutExpo',
+  'easeOutInBack',
+  'easeOutInBounce',
+  'easeOutInCirc',
+  'easeOutInCubic',
+  'easeOutInElastic',
+  'easeOutInExpo',
+  'easeOutInQuad',
+  'easeOutInQuart',
+  'easeOutInQuint',
+  'easeOutInSine',
+  'easeOutQuad',
+  'easeOutQuart',
+  'easeOutQuint',
+  'easeOutSine',
 ];
 /*
-'easeInQuad',
-'easeInQuart',
-'easeInQuint',
-'easeInSine',
-'easeInBack',
-'easeInBounce',
-'easeInCirc',
-'easeInCubic',
-'easeInElastic',
-'easeInExpo',
-'easeInOutBack',
-'easeInOutBounce',
-'easeOutBack',
-'easeOutBounce',
-'easeOutCirc',
-'easeOutCubic',
-'easeOutElastic',
-'easeOutExpo',
-'easeOutInBack',
-'easeOutInBounce',
-'easeOutInCirc',
-'easeOutInCubic',
-'easeOutInElastic',
-'easeOutInExpo',
-'easeOutInQuad',
-'easeOutInQuart',
-'easeOutInQuint',
-'easeOutInSine',
-'easeOutQuad',
-'easeOutQuart',
-'easeOutQuint',
-'easeOutSine',
+
  */
-function randEasing() {
+function randEasing(log) {
   const easing = aniEasings[anime.random(0, aniEasings.length)];
-  console.log(easing);
+  if (log) console.log(easing);
   return easing;
 }
 function aniItemsRandom(selector, callback, maxDuration = 700, maxDelay = 220, minDuration = 250) {

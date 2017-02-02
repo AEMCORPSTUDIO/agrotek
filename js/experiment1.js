@@ -38,7 +38,6 @@ const path2 = anime.path('.path2');
 const path3 = anime.path('.path3');
 const path4 = anime.path('.path4');
 
-
 anime({
   targets: '.line1',
   delay(el, index) {
