@@ -26,8 +26,22 @@ $(() => {
 
 //  setTimeout(() => aniItemsRandom('.scene-leaf circle'), 700);
   setTimeout(() => drawStroke('.scene-first path', false), 600);
-  setTimeout(() => drawStroke('.scene-first circle', false), 1400);
-  // setTimeout(() => drawSVGPath('.scene-leaf path'), 10);
+ // setTimeout(() => drawStroke('.scene-first circle', false), 1400);
+  setTimeout(() => anime({
+    targets: '.scene-first circle',
+    opacity: [0, 1],
+    scale: [0, 1],
+    rotateX: [anime.random(70, 30), 0],
+    translateX: [anime.random(120, 30), 0],
+    fillOpacity: [0, 0.7],
+    translateY: [anime.random(120, 30), 0],
+    duration: 1100,
+    easing: randEasing(true),
+    delay: (e, i) => i * 130
+  }), 1400);
+
+ setTimeout(() => showText('.scene-first'), 3200);
+
   setTimeout(() => {
     setTimeout(() => anime({
       targets: '.scene-leaf .bottle',
@@ -212,16 +226,16 @@ $(() => {
     });
   }, 4700);
 
-  setTimeout(() => {
-    anime({
-      targets: '.scene-first svg',
-      rotate: '+12260deg',
-      duration: 2232600,
-      loop: true,
-      round: true
-    });
-    setTimeout(() => showText('.scene-first'), 500);
-  }, 500);
+  // setTimeout(() => {
+  //   anime({
+  //     targets: '.scene-first svg',
+  //     rotate: '+12260deg',
+  //     duration: 2232600,
+  //     loop: true,
+  //     round: true
+  //   });
+  //   setTimeout(() => showText('.scene-first'), 500);
+  // }, 500);
 
   setTimeout(() => {
     drawStroke('.sphere-3 path', false);
@@ -474,7 +488,7 @@ function randEasing(log) {
   return easing || 'linear';
 }
 
-function aniItemsRandom(selector, callback, maxDuration = 900, maxDelay = 220, minDuration = 350) {
+function aniItemsRandom(selector, callback, maxDuration = 700, maxDelay = 220, minDuration = 350) {
   const params = {
     targets: selector,
     opacity: {
