@@ -46,8 +46,7 @@ body {
     padding: 4px 16px 7px 16px;
     /* padding-left: 20px; */
     display: inline-block;
-    z-index: 999;
-    display: none;
+    z-index: 9;
     font-size: 32px;
     /* text-transform: uppercase; */
     font-weight: 300;
@@ -82,13 +81,29 @@ body {
   }
   &.scene-leaf-cap {
     height: 230px;
-    z-index: 9;
     width: 180px;
     position: absolute;
     top: 190px;
+    z-index:16;
     left: 400px;
   }
-
+  &.scene-leaf-pink {
+    height: 230px;
+    z-index: 9;
+    width: 150px;
+    position: absolute;
+    top: 190px;
+    left: 660px;
+    z-index: 16;
+  }
+  &.scene-flour {
+    height: 230px;
+    z-index: 9;
+    width: 140px;
+    position: absolute;
+    top: 200px;
+    left: 840px;
+  }
   &.scene-box {
     height: 200px;
     width: 190px;
@@ -98,6 +113,7 @@ body {
     z-index: 9;
   }
   &.sphere-2 {
+    z-index:12;
     height: 240px;
     width: 240px;
     position: absolute;
