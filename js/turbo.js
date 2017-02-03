@@ -52,7 +52,7 @@ $(() => {
         easing: randEasing(),
         delay: (e, i) => i * 130
       });
-    }, 900);
+    }, 300);
     setTimeout(() => {
       anime({
         targets: '.scene-leaf .stick',
@@ -221,7 +221,7 @@ $(() => {
       round: true
     });
     setTimeout(() => showText('.scene-first'), 500);
-  }, 2000);
+  }, 500);
 
   setTimeout(() => {
     drawStroke('.sphere-3 path', false);
@@ -230,11 +230,11 @@ $(() => {
 
     setTimeout(() => justDraw('.scene-leaf-pink circle, .scene-leaf-pink path, .scene-leaf-pink ellipse'), 700);
     setTimeout(() => drawStroke('.scene-flour circle, .scene-flour path, .scene-flour ellipse'), 1700);
-  }, 4900);
+  }, 4400);
 
   setTimeout(() => {
 //    aniItemsRandom('.sphere-4 circle');
-    setTimeout(() => showText('.sphere-4'), 100);
+    setTimeout(() => showText('.sphere-4'), 500);
     anime({
       targets: '.sphere-4 path, .sphere-4 ellipse, .sphere-4 circle',
       opacity: [0, 1],
@@ -266,7 +266,7 @@ $(() => {
         }, 800);
       }
     });
-  }, 6500);
+  }, 6200);
 
   function justDraw(selector, callback) {
     anime({
@@ -355,7 +355,7 @@ $(() => {
   function drawStroke(selector, callback) {
     console.log(selector);
     $(selector).css({
-      stroke: 'rgba(0,0,0,0.4)',
+      stroke: 'rgba(0,0,0,0.3)',
       'stroke-opacity': '1',
       'stroke-width': '3px',
       opacity: 1,
@@ -373,7 +373,7 @@ $(() => {
         delay: (e, i) => i * anime.random(50, 350)
       },
       strokeWidth: {
-        value: ['3px', '1px'],
+        value: ['3px', '2px'],
         duration: 2000,
         delay: 700
       },
@@ -393,7 +393,7 @@ $(() => {
               duration: 2700
             },
           });
-        }, 500);
+        }, 400);
 
       //  if (callback) callback(e);
       }
@@ -444,12 +444,7 @@ const aniEasings = [
   'easeInSine',
   // 'easeInBack',
   'easeInBounce',
-  'easeInCirc',
-  'easeInCubic',
   'easeInElastic',
-  'easeInExpo',
-  'easeInOutBack',
-  'easeInOutBounce',
   // 'easeOutBack',
   // 'easeOutBounce',
   // 'easeOutCirc',
@@ -479,7 +474,7 @@ function randEasing(log) {
   return easing || 'linear';
 }
 
-function aniItemsRandom(selector, callback, maxDuration = 500, maxDelay = 220, minDuration = 350) {
+function aniItemsRandom(selector, callback, maxDuration = 900, maxDelay = 220, minDuration = 350) {
   const params = {
     targets: selector,
     opacity: {
@@ -495,19 +490,19 @@ function aniItemsRandom(selector, callback, maxDuration = 500, maxDelay = 220, m
       delay: (el, index) => index * anime.random(50, maxDelay)
     },
     translateY: {
-      value: () => [anime.random(300, 50), 0],
+      value: () => [anime.random(200, 50), 0],
       duration: anime.random(minDuration, maxDuration),
       easing: randEasing(),
       delay: (el, index) => index * anime.random(10, maxDelay)
     },
     translateX: {
-      value: () => [anime.random(100, 50), 0],
+      value: () => [anime.random(200, 50), 0],
       duration: anime.random(minDuration, maxDuration),
       easing: randEasing(),
       delay: (el, index) => index * anime.random(10, maxDelay)
     },
     translateZ: {
-      value: () => [anime.random(100, 50), 0],
+      value: () => [anime.random(200, 50), 0],
       duration: anime.random(minDuration, maxDuration),
       easing: randEasing(),
       delay: (el, index) => index * anime.random(10, maxDelay)
