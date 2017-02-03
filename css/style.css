@@ -33,7 +33,7 @@ a:hover {
 	padding-right: 0px;
 	padding-left: 0px;
 }
-img.logo { 
+img.logo {
 	width:auto;
 	height:45px;
 }
@@ -137,12 +137,12 @@ img.logo {
 	.footer-a {
 		color: #fff;
 	}
-}	
+}
 .carousel-caption {
 	margin-bottom: 5%;
 }
 .icon {
-	margin-left: 15px; 
+	margin-left: 15px;
 	width: 43px;
 	height: 43px;
 }
@@ -328,7 +328,7 @@ p.catalog {
 }
 .carousel.fade .item{
 	display: block;
-	position: absolute;	
+	position: absolute;
 	left: 0;
 	top: 0;
 	width: 100%;
