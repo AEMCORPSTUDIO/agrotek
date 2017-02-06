@@ -1,4 +1,6 @@
-$(() => {
+{
+
+}$(() => {
   const $scene1 = $('.scene-leaf path');
   const $scene1circle = $('.scene-leaf circle');
   const $scene2 = $('.scene-first circle');
@@ -27,7 +29,22 @@ $(() => {
 //  setTimeout(() => aniItemsRandom('.scene-leaf circle'), 700);
   setTimeout(() => drawStroke('.scene-first path', false), 600);
   setTimeout(() => drawStroke('.scene-first circle', false), 1400);
-  // setTimeout(() => drawSVGPath('.scene-leaf path'), 10);
+
+  setTimeout(() => anime({
+    targets: '.scene-first circle',
+    opacity: [0, 1],
+    scale: [0, 1],
+    rotateX: [anime.random(70, 30), 0],
+    translateX: [anime.random(120, 30), 0],
+    fillOpacity: [0, 0.7],
+    translateY: [anime.random(120, 30), 0],
+    duration: 700,
+    easing: randEasing(true),
+    delay: (e, i) => i * 130
+  }), 1200);
+
+  setTimeout(() => showText('.scene-first'), 3200);
+
   setTimeout(() => {
     setTimeout(() => anime({
       targets: '.scene-leaf .bottle',
@@ -128,6 +145,7 @@ $(() => {
           easing: randEasing(),
         //  fillOpacity: [0.5, 1],
           duration: 500,
+          elasticity: 1200,
           complete: () => {
             anime({
               targets: '.sphere-2 .dots',
@@ -140,7 +158,7 @@ $(() => {
         });
       }, 50);
     }, 3000);
-    setTimeout(() => aniItemsRandom('.sphere-2 .background'), 3200);
+    setTimeout(() => aniItemsRandom('.sphere-2 .background'));
     setTimeout(() => {
       anime({
         targets: '.scene-leaf-cap .leafs',
@@ -166,7 +184,7 @@ $(() => {
       delay: (e, i) => i * 80
     }), 1200);
   //  setTimeout(() => aniItemsRandom('.sphere-2 circle'), 1400);
-    setTimeout(() => showText('.sphere-2'), 2800);
+    setTimeout(() => showText('.sphere-2'), 1900);
   }, 2400);
 
   $('.scene-leaf-cap .leafs').css({ transform: 'scale(0.5)' });
@@ -210,27 +228,44 @@ $(() => {
       duration: 600,
       delay: (e, i) => i * 30
     });
-  }, 4700);
+  }, 3700);
 
-  setTimeout(() => {
-    anime({
-      targets: '.scene-first svg',
-      rotate: '+12260deg',
-      duration: 2232600,
-      loop: true,
-      round: true
-    });
-    setTimeout(() => showText('.scene-first'), 500);
-  }, 500);
+  // setTimeout(() => {
+  //   anime({
+  //     targets: '.scene-first svg',
+  //     rotate: '+12260deg',
+  //     duration: 2232600,
+  //     loop: true,
+  //     round: true
+  //   });
+  //   setTimeout(() => showText('.scene-first'), 500);
+  // }, 500);
 
   setTimeout(() => {
     drawStroke('.sphere-3 path', false);
+    const path = anime.path('.sphere-3 .follow-path');
+
+    anime({
+      targets: '.sphere-3 .circle',
+      translateX: path,
+      translateY: path,
+      rotate: path,
+      duration: 3000,
+      loop: true,
+      easing: 'linear'
+    });
+
+    anime({
+      targets: '.sphere-3 .bubbles',
+      opacity: [0, 1],
+      duration: 3000,
+    });
     setTimeout(() => aniItemsRandom('.sphere-3 circle'), 800);
     setTimeout(() => showText('.sphere-3'), 1400);
 
     setTimeout(() => justDraw('.scene-leaf-pink circle, .scene-leaf-pink path, .scene-leaf-pink ellipse'), 700);
-    setTimeout(() => drawStroke('.scene-flour circle, .scene-flour path, .scene-flour ellipse'), 1700);
-  }, 4400);
+    setTimeout(() => justDraw('.scene-flour circle, .scene-flour path, .scene-flour ellipse'), 1700);
+  }, 2400);
 
   setTimeout(() => {
 //    aniItemsRandom('.sphere-4 circle');
@@ -250,7 +285,7 @@ $(() => {
               value: [35000],
             },
             loop: true,
-            elasticity: 700,
+            elasticity: 500,
             duration: 2113500,
             direction: 'alternate'
           });
@@ -266,7 +301,7 @@ $(() => {
         }, 800);
       }
     });
-  }, 6200);
+  }, 3500);
 
   function justDraw(selector, callback) {
     anime({
@@ -474,7 +509,7 @@ function randEasing(log) {
   return easing || 'linear';
 }
 
-function aniItemsRandom(selector, callback, maxDuration = 900, maxDelay = 220, minDuration = 350) {
+function aniItemsRandom(selector, callback, maxDuration = 700, maxDelay = 220, minDuration = 350) {
   const params = {
     targets: selector,
     opacity: {
